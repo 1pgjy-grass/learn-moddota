@@ -14,6 +14,9 @@ export class GameMode {
     public static Precache(this: void, context: CScriptPrecacheContext) {
         PrecacheResource("particle", "particles/units/heroes/hero_meepo/meepo_earthbind_projectile_fx.vpcf", context);
         PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts", context);
+
+        PrecacheResource("particle", "particles/units/heroes/hero_skywrath_mage/skywrath_mage_arcane_bolt.vpcf", context);
+        PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts", context);
     }
 
     public static Activate(this: void) {
@@ -101,6 +104,11 @@ export class GameMode {
             if (!unit.HasAbility("meepo_earthbind_ts_example")) {
                 // Add lua ability to the unit
                 unit.AddAbility("meepo_earthbind_ts_example");
+            }
+
+            if (!unit.HasAbility("typescript_skywrath_mage_arcane_bolt")) {
+                // Add lua ability to the unit
+                unit.AddAbility("typescript_skywrath_mage_arcane_bolt");
             }
         }
     }
